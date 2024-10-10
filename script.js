@@ -74,6 +74,55 @@ function numberGenerator() {
 
 document.getElementById("playBtn").addEventListener("click", numberGenerator);
 
+
+//LA PARTE SOTTOSTANTE è STATA CREATA CON L'AIUTO DELL'IA
+
+
+const submitBtn = document.getElementById("submitBtn");
+const inputs = [
+    document.getElementById("inputNum1"),
+    document.getElementById("inputNum2"),
+    // document.getElementById("inputNum2"),
+    document.getElementById("inputNum3"),
+    document.getElementById("inputNum4"),
+    document.getElementById("inputNum5"),
+];
+
+// Funzione per verificare la validità degli input
+function checkInputs() {
+    let numeriDichiarati = [];
+    let numeriUnici = new Set();
+    let isValid = true;
+
+    for (let input of inputs) {
+        const value = parseInt(input.value);
+        // Controlla se il valore è un numero valido
+        if (isNaN(value) || value < 0 || value > 100) {
+            isValid = false;
+            break;
+        }
+        // Controlla i numeri duplicati
+        if (numeriUnici.has(value)) {
+            isValid = false;
+            break;
+        }
+        numeriUnici.add(value);
+        numeriDichiarati.push(value);
+    }
+
+    // Abilita o disabilita il pulsante di invio
+    submitBtn.disabled = !isValid;
+}
+
+// Aggiungi l'evento input per monitorare i cambiamenti
+inputs.forEach(input => {
+    input.addEventListener("input", checkInputs);
+});
+
+
+//LA PARTE SOPRASTANTE è STATA CREATA CON L'AIUTO DELL'IA
+
+
 document.getElementById("verifyForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
