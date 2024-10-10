@@ -57,13 +57,13 @@ function numberGenerator() {
     numero4.textContent = num4;
     numero5.textContent = num5;
 
-    // setTimeout(function() {
-    //     numero1.textContent = "";
-    //     numero2.textContent = "";
-    //     numero3.textContent = "";
-    //     numero4.textContent = "";
-    //     numero5.textContent = "";
-    // }, 10000); 
+    setTimeout(function() {
+        numero1.textContent = "";
+        numero2.textContent = "";
+        numero3.textContent = "";
+        numero4.textContent = "";
+        numero5.textContent = "";
+    }, 10000); 
 
     document.getElementById("playBtn").disabled = true;
 }
@@ -75,6 +75,13 @@ document.getElementById("verifyForm").addEventListener("submit", function(event)
 
     let numeriDichiarati = [];
     let count = 0;
+    let celle = [
+        document.getElementById("num1"),
+        document.getElementById("num2"),
+        document.getElementById("num3"),
+        document.getElementById("num4"),
+        document.getElementById("num5"),
+    ];
 
     let inputUno = parseInt(document.getElementById("inputNum1").value);
     let inputDue = parseInt(document.getElementById("inputNum2").value);
@@ -87,13 +94,18 @@ document.getElementById("verifyForm").addEventListener("submit", function(event)
 
     for (let i = 0; i < numeriDichiarati.length; i++) {
         if(numeriSalvati.includes(numeriDichiarati[i])){
-            count++
+            count++;
+            console.log(numeriDichiarati[i] + " è incluso");
+            celle[i].style.backgroundColor = "green";
+            celle[i].textContent = numeriDichiarati[i];
+            
+        } else {
+            celle[i].style.backgroundColor = "red";
+            celle[i].textContent = numeriDichiarati[i];
         }
         
     }
     console.log(count);
-    
-    
     
 
 });
