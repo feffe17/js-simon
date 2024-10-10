@@ -14,3 +14,28 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 buon divertimento e confermate lettura come al solito*/
 
 
+let num1;
+let num2;
+let num3;
+let num4;
+let num5;
+
+num1 = Math.floor(Math.random() * 101);
+num2 = Math.floor(Math.random() * 101);
+num3 = Math.floor(Math.random() * 101);
+num4 = Math.floor(Math.random() * 101);
+num5 = Math.floor(Math.random() * 101);
+
+// console.log(num1 , num2 , num3 , num4 , num5);
+
+let numero1 = document.getElementById("num1");
+let numero2 = document.getElementById("num2");
+let numero3 = document.getElementById("num3");
+let numero4 = document.getElementById("num4");
+let numero5 = document.getElementById("num5");
+
+numero1.textContent = num1;
+numero2.textContent = num2;
+numero3.textContent = num3;
+numero4.textContent = num4;
+numero5.textContent = num5;
