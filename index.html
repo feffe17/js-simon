@@ -9,14 +9,42 @@
 </head>
 <body>
     <div class="container my-5">
-        <div class="row justify-content-evenly">
+        <div class="row justify-content-between">
             <div id="num1" class="col-md-2 border ratio-1 d-flex justify-content-center align-items-center fs-1"></div>
             <div id="num2" class="col-md-2 border ratio-1 d-flex justify-content-center align-items-center fs-1"></div>
             <div id="num3" class="col-md-2 border ratio-1 d-flex justify-content-center align-items-center fs-1"></div>
             <div id="num4" class="col-md-2 border ratio-1 d-flex justify-content-center align-items-center fs-1"></div>
             <div id="num5" class="col-md-2 border ratio-1 d-flex justify-content-center align-items-center fs-1"></div>
         </div>
-        <button id="playBtn" type="button" class="btn btn-primary my-4">Primary</button>
+        <button id="playBtn" type="button" class="btn btn-primary my-4">Genera</button>
+    </div>
+
+    <div class="container my-5">
+        <form id="verifyForm" class="row g-3">
+            <div class="col-2">
+              <label for="inputNum1" class="form-label">NUMERO 1</label>
+              <input type="text" class="form-control" id="inputNum1">
+            </div>
+            <div class="col-2">
+                <label for="inputNum2" class="form-label">NUMERO 2</label>
+                <input type="text" class="form-control" id="inputNum2">
+              </div>
+            <div class="col-2">
+                <label for="inputNum3" class="form-label">NUMERO 3</label>
+                <input type="text" class="form-control" id="inputNum3">
+            </div>
+            <div class="col-2">
+                <label for="inputNum4" class="form-label">NUMERO 4</label>
+                <input type="text" class="form-control" id="inputNum4">
+            </div>
+            <div class="col-2">
+                <label for="inputNum5" class="form-label">NUMERO 5</label>
+                <input type="text" class="form-control" id="inputNum5">
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Verifica</button>
+            </div>
+          </form>
     </div>
 
 

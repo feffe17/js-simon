@@ -13,6 +13,8 @@ Individuate gli elementi di cui avete bisogno per realizzare il programma.
 Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali e quanti numeri ci sono in comune tra i due array"
 buon divertimento e confermate lettura come al solito*/
 
+let numeriSalvati = [];
+
 function numberGenerator() {
     let numeriGenerati = [];
 
@@ -38,6 +40,8 @@ function numberGenerator() {
     num3 = numeroUnico();
     num4 = numeroUnico();
     num5 = numeroUnico();
+
+    numeriSalvati.push(num1 , num2, num3 , num4 , num5);
     
     // console.log(num1 , num2 , num3 , num4 , num5);
     
@@ -52,10 +56,47 @@ function numberGenerator() {
     numero3.textContent = num3;
     numero4.textContent = num4;
     numero5.textContent = num5;
+
+    // setTimeout(function() {
+    //     numero1.textContent = "";
+    //     numero2.textContent = "";
+    //     numero3.textContent = "";
+    //     numero4.textContent = "";
+    //     numero5.textContent = "";
+    // }, 10000); 
+
+    document.getElementById("playBtn").disabled = true;
 }
 
-
-
-
 document.getElementById("playBtn").addEventListener("click", numberGenerator);
+
+document.getElementById("verifyForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let numeriDichiarati = [];
+    let count = 0;
+
+    let inputUno = parseInt(document.getElementById("inputNum1").value);
+    let inputDue = parseInt(document.getElementById("inputNum2").value);
+    let inputTre = parseInt(document.getElementById("inputNum3").value);
+    let inputQuattro = parseInt(document.getElementById("inputNum4").value);
+    let inputCinque = parseInt(document.getElementById("inputNum5").value);
+    
+    numeriDichiarati.push(inputUno , inputDue , inputTre , inputQuattro , inputCinque);
+    console.log(numeriDichiarati);
+
+    for (let i = 0; i < numeriDichiarati.length; i++) {
+        if(numeriSalvati.includes(numeriDichiarati[i])){
+            count++
+        }
+        
+    }
+    console.log(count);
+    
+    
+    
+
+});
+
+
 
