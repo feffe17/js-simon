@@ -15,6 +15,8 @@ buon divertimento e confermate lettura come al solito*/
 
 let numeriSalvati = [];
 
+document.getElementById("verifyForm").style.display = "none";
+
 function numberGenerator() {
     let numeriGenerati = [];
 
@@ -63,6 +65,8 @@ function numberGenerator() {
         numero3.textContent = "";
         numero4.textContent = "";
         numero5.textContent = "";
+        document.getElementById("verifyForm").style.display = "flex";
+        document.getElementById("playBtn").disabled = false;
     }, 10000); 
 
     document.getElementById("playBtn").disabled = true;
