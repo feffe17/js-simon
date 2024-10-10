@@ -13,29 +13,49 @@ Individuate gli elementi di cui avete bisogno per realizzare il programma.
 Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali e quanti numeri ci sono in comune tra i due array"
 buon divertimento e confermate lettura come al solito*/
 
+function numberGenerator() {
+    let numeriGenerati = [];
 
-let num1;
-let num2;
-let num3;
-let num4;
-let num5;
+    function numeroUnico() {
+        let numero;
+        do {
+            numero = Math.floor(Math.random() * 101);
+        } while (numeriGenerati.includes(numero));
+        numeriGenerati.push(numero);
+        return numero;
+    }
 
-num1 = Math.floor(Math.random() * 101);
-num2 = Math.floor(Math.random() * 101);
-num3 = Math.floor(Math.random() * 101);
-num4 = Math.floor(Math.random() * 101);
-num5 = Math.floor(Math.random() * 101);
 
-// console.log(num1 , num2 , num3 , num4 , num5);
 
-let numero1 = document.getElementById("num1");
-let numero2 = document.getElementById("num2");
-let numero3 = document.getElementById("num3");
-let numero4 = document.getElementById("num4");
-let numero5 = document.getElementById("num5");
+    let num1;
+    let num2;
+    let num3;
+    let num4;
+    let num5;
+    
+    num1 = numeroUnico();
+    num2 = numeroUnico();
+    num3 = numeroUnico();
+    num4 = numeroUnico();
+    num5 = numeroUnico();
+    
+    // console.log(num1 , num2 , num3 , num4 , num5);
+    
+    let numero1 = document.getElementById("num1");
+    let numero2 = document.getElementById("num2");
+    let numero3 = document.getElementById("num3");
+    let numero4 = document.getElementById("num4");
+    let numero5 = document.getElementById("num5");
+    
+    numero1.textContent = num1;
+    numero2.textContent = num2;
+    numero3.textContent = num3;
+    numero4.textContent = num4;
+    numero5.textContent = num5;
+}
 
-numero1.textContent = num1;
-numero2.textContent = num2;
-numero3.textContent = num3;
-numero4.textContent = num4;
-numero5.textContent = num5;
+
+
+
+document.getElementById("playBtn").addEventListener("click", numberGenerator);
+
